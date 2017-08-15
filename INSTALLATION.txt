@@ -1,0 +1,31 @@
+INSTALLATION
+
+
+DEPENDENCIES
+
+The fibonacci.py service depends on the following:
+
+- Python 2.5 or higher
+
+- WebPy Python web framework
+
+    o See installation instructions for the framework here:
+	http://webpy.org/install
+
+    o The fibonacci.py service is written to use the native WebPy web server.
+	It was not written or tested to use any of the web server
+	configurations.
+
+The service was written and tested on Ubuntu 64-bit Desktop version 16.04.3.
+It has not been tested on other distributions or versions.
+
+
+INSTALL
+
+No installation steps are required. Confirm execute permission, and then run
+the service with ./fibonacci.py in the directory the service resides in.
+
+The service will continue to run until it receives an interrupt (signal,
+control-C, etc.).
+
+
