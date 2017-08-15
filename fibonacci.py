@@ -21,7 +21,9 @@ def help_text():
     output += "A GET request with no paramters or an invalid parameter returns\n"
     output += "this help message. A parameter that is not a number is considered invalid.\n\n"
     output += "Use an HTTP GET with /fibonacci/X  where X is the length of the\n"
-    output += "Fibonacci sequence to return, starting from the beginning.\n\n\n"
+    output += "Fibonacci sequence to return, starting from the beginning.\n\n"
+    output += "The length is capped at a maximum of 10,000 Fibonacci numbers.\n"
+    output += "Attempting to request more than that will return an out of bounds error.\n\n\n"
     output += "Example:\n\n"
     output += "/fibonacci/5  will output the first 5 Fibonacci numbers, in sequence.\n\n"
     return output
@@ -65,7 +67,9 @@ def fibonacci_sequence( num ):
     if not result and num != "0" :
         output = "\nError: Parameter '" + num + "' is not a number.\n"
 
-    elif result < 1 or num == "0" :
+    # capping at 10,000 requests, to protect the service
+    # even 10,000 runs for quite a while (a few seconds)
+    elif result < 1 or result > 10000 or num == "0" :
         output = "\nError: Parameter " + str( num ) + " is out of bounds.\n"
 
     else:
