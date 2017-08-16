@@ -16,16 +16,28 @@ The fibonacci.py service depends on the following:
 	It was not written or tested to use any of the web server
 	configurations.
 
-The service was written and tested on Ubuntu 64-bit Desktop version 16.04.3.
-It has not been tested on other distributions or versions.
+The func_tests.py module depens on:
+
+- The requests framework. Details at: http://www.python-requests.org
+
+The service and functional tests were written and tested on Ubuntu 64-bit
+Desktop version 16.04.3. It has not been tested on other distributions or
+versions.
 
 
 INSTALL
 
-No installation steps are required. Confirm execute permission, and then run
-the service with ./fibonacci.py in the directory the service resides in.
+No installation steps are required for this service itself or the functional
+test routines. See the DEPENDENCIES section, which does have some components
+that require installation into the environment.
+
+Confirm execute permission on ./fibonacci.py, and then run the service with
+./fibonacci.py in the directory the service resides in.
 
 The service will continue to run until it receives an interrupt (signal,
 control-C, etc.).
 
+Confirm execute permission on ./func_tests.py, and then run the testing
+routines with ./func_tests.py in the directory the program resides in. The
+tests will run and output results to STDOUT.
 
